@@ -4,6 +4,13 @@
   "sideEffects": [
     "**/*.css"
   ],
+  "repository": {
+    "url": "git+https://github.com/aleks-elkin/components-library.git",
+    "type": "git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
