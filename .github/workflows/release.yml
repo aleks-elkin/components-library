@@ -17,7 +17,6 @@ jobs:
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
       packages: write # to be able to publish a GitHub release
-      attestations: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
