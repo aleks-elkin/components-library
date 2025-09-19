@@ -35,15 +35,7 @@ jobs:
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
 
-      - name: Build
-        run: npm run build
-
-      - name: Publish
-        run: npm publish --access=public --dry-run
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --branches main --tag-prefix ""
+        run: npx semantic-release --npmPublish --provenance --access=public --branches main --tag-prefix ""
