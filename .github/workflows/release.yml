@@ -42,4 +42,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # run: npx semantic-release --npmPublish --provenance --access=public --branches main
-        run: npx release-it minor --github.release=true --github.tokenRef=GITHUB_TOKEN --git.commit=false
+        run: npx release-it minor --github.release=true --github.tokenRef=GITHUB_TOKEN --git.commit=false --npm.ignoreVersion=true
