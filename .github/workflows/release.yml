@@ -1,6 +1,16 @@
 name: Release
 on:
   workflow_dispatch:
+    inputs:
+      releaseType:
+      description: "Release type"
+      required: true
+      default: "patch"
+      type: choice
+      options:
+        - major
+        - minor
+        - patch
     tags:
       description: "Tags for the release"
 
@@ -47,4 +57,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # run: npx semantic-release --npmPublish --provenance --access=public --branches main
-        run: npx release-it minor --github.release=true --git.commit=false --npm.ignoreVersion=true
+        run: npx release-it ${{ inputs.releaseType }} --github.release=true --git.commit=false --npm.ignoreVersion=true
