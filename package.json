@@ -1,5 +1,5 @@
 {
-  "name": "@aleks-elkin/components-library",
+  "name": "components-library",
   "version": "0.0.0",
   "sideEffects": [
     "**/*.css"
