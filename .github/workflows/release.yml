@@ -42,6 +42,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
+          scope: "@elkin-aleks"
 
       - name: npm config
         run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
